@@ -39,7 +39,7 @@ document.querySelector("form").addEventListener("submit", (event) => {
   if (Math.floor(Math.random() * 2) == 1) {
    suhtlus.innerHTML += "<b>mull </b>";} else {suhtlus.innerHTML += "<b>sulps </b>";}
    await maga(10)}
- suhtlus.innerHTML += '<img src="emoji/'+emojid[Math.floor(Math.random() * 7)]+'.svg" height=30>';
+ suhtlus.innerHTML += '<img src="emoji/'+emojid[Math.floor(Math.random() * 6)]+'.svg" height=30>';
  document.querySelector("#viip").value = "";}
  const param = new URLSearchParams(window.location.search);
  vasta(param.get("viip"))
