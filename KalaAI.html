@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>KalaAI</title>
+ <style>
+ body {padding: 10px; color: white; background-color: black; font-family: monospace;}
+ img:hover{transform: rotate(360deg); height: 100}
+ #viip {background-color: black; color: white; font-family: monospace; border-color: white}
+ .saada {background-color: lightgreen; color: black; transition: background-color 1s, color 2s; font-family: monospace}
+ .saada:hover {background-color: darkblue; color: white;}
+ </style>
+</head>
+<body>
+ <img src="KalaAI-valge.svg" height=50>
+ <p id="suhtlus">
+ <i>hahahahahahahaha said skämmi hihihihihihihihihi tegelikult ma olen hoopis KalaAI hehehehehehehehehehehehehehehe</i>
+ </p>
+ <form>
+ <input name="viip" placeholder="Küsimus" id="viip">
+ <input type="submit" value="Saada" class="saada">
+ <script>
+function maga(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+document.querySelector("form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    vasta(document.querySelector("#viip").value)})
+ var suhtlus = document.querySelector("#suhtlus");
+ var mull = [];
+ var a = 0
+ var vasta = async (viip) => {
+ mull = [];
+ suhtlus.innerHTML += "<br>" + viip + "<br>"
+ a = Math.floor(Math.random() * 1000);
+ if (a==0) {suhtlus.innerHTML += "<i> Oooo, KalaAI ei vastanud sulle. Tõeneaosus et KalaAI Su küsimusele ei vasta on 0,1% küsimuse kohta.</i>"}
+ for (var i = 0; i < a; i++) {
+  if (Math.floor(Math.random() * 2) == 1) {
+   suhtlus.innerHTML += "<b>mull </b>";} else {suhtlus.innerHTML += "<b>sulps </b>";}
+   await maga(10)}
+ document.querySelector("#viip").value = "";}
+ const param = new URLSearchParams(window.location.search);
+ vasta(param.get("viip"))
+ </script>
+</body>
+</html>
